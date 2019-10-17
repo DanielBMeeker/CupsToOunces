@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<!--Daniel Meeker-->
+<head>
+<meta charset="utf-8">
+<title>CupsToOunces</title>
+	<script>
+	function cupsToOz(){
+		let ozConverter = 8; //there are 8 ounces in a cup
+		let cups = document.getElementById('cups').value; //captures the value from the cups input
+		if (isNaN(cups) == false) { //calls the not-a-number function - if not-a-number is false then it does the calculation
+			if (cups >=0){
+		let total = ozConverter * cups;
+		 document.getElementById("txtresult").value = (total + " ounces"); //changes the value of the txtresult input box to the total.
+			}
+			else
+			{
+				document.getElementById("txtresult").value = ""; //clears the txtresult box
+				document.getElementById('cups').value = ""; //clears the cups box
+				alert("Please enter a positive number"); //alerts the user 	
+				document.getElementById('cups').focus(); //resets focus to cups box
+			}
+		}
+		
+		else
+		{
+			document.getElementById("txtresult").value = ""; //clears the txtresult box
+			document.getElementById('cups').value = ""; //clears the cups box
+			alert("Please enter a number"); //alerts the user 
+			document.getElementById('cups').focus(); //resets focus to cups box
+		}
+	
+	}
+	</script>
+</head>
+
+<body>
+	<h1>Welcome to the Cups to Ounces Converter!</h1>
+	<h3>Please enter the number of cups you wish to convert:</h3>
+	
+	<label><input type="text" id="cups"></label>
+		<button onClick="cupsToOz()">Submit</button>
+		<p>Result : 
+            <input type="text" id="txtresult"></p>
+
+	
+</body>
+</html>
